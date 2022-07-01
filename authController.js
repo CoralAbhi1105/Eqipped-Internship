@@ -97,15 +97,16 @@ function authController() {
 
                     const transporter = nodemailer.createTransport({
                         service: 'gmail',
+                        type: "SMTP",
+                        host: "smtp.gmail.com",
+                        port: 587,
+                        ignoreTLS: false,
+                        secure: false,
                         auth: {
                             user: 'equipped.gearloose@gmail.com',
-                            pass: 'gzgossoykfwflkrg'
-                            // pass: 'Asdfqwer1234'
-                        },
-                        port: 465,
-                        host: "smtp.gmail.com"
+                            pass: 'Asdfqwer1234'
+                        }
                     });
-                    
                     const mailOptions = {
                         from: 'equipped.gearloose@gmail.com',
                         to: doc.email,
@@ -114,7 +115,6 @@ function authController() {
 
                     };
                     console.log(link)
-
                     transporter.sendMail(mailOptions, function (err, info) {
                         if (err) {
 
@@ -217,18 +217,28 @@ function authController() {
             // console.log("otp for email", EOTP);
 
             // Code for http request
-            // axios
-            //     .get(`https://www.txtguru.in/imobile/api.php?username=gearloose.lab&password=71703091&source=GRLABS&dmobile=91${phone}&dlttempid=1507165000853446536&message=${OTP} is your eqipped.com verification code. It is valid for only 3 minutes. Do not share it with anyone. GRLABS`)
-            //     .then(res => {
-            //         console.log(`statusCode: ${res.status}`)
-            //     })
-            //     .catch(error => {
-            //         console.error(error)
-            //     })
+            axios
+                .get(`https://www.txtguru.in/imobile/api.php?username=gearloose.lab&password=71703091&source=GRLABS&dmobile=91${phone}&dlttempid=1507165000853446536&message=${OTP} is your eqipped.com verification code. It is valid for only 3 minutes. Do not share it with anyone. GRLABS`)
+                .then(res => {
+                    console.log(`statusCode: ${res.status}`)
+                })
+                .catch(error => {
+                    console.error(error)
+                })
 
 
-
-
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                type: "SMTP",
+                host: "smtp.gmail.com",
+                port: 587,
+                ignoreTLS: false,
+                secure: false,
+                auth: {
+                    user: 'equipped.gearloose@gmail.com',
+                    pass: 'Asdfqwer1234'
+                }
+            });
             const mailOptions = {
                 from: 'equipped.gearloose@gmail.com',
                 to: email,
@@ -236,32 +246,15 @@ function authController() {
                 text: "Your 5 digit verification code is " + EOTP
 
             };
-
-
-            const transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: 'equipped.gearloose@gmail.com',
-                    pass: 'gzgossoykfwflkrg'
-                    // pass: 'Asdfqwer1234'
-                },
-                port: 465,
-                host: "smtp.gmail.com"
-            });
-
-          
             transporter.sendMail(mailOptions, function (err, info) {
                 if (err) {
                     req.flash('success', 'Something Went Wrong')
-                    return;
+                    return res.redirect('/register')
                 } else {
                     req.flash('success', 'Code sent successfully')
-                    return;
+                    // return res.redirect('/register')
                 }
             })
-
-
-
 
             const otp = new Otp({ phone: phone, otp: OTP, email: email, eotp: EOTP })
             const salt = await bcrypt.genSalt(10)
@@ -276,7 +269,6 @@ function authController() {
                 req.flash('success', 'Something went wrong please try again later')
                 return res.redirect('/register')
             })
-            
         },
 
         // Verification code sent function end

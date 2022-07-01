@@ -674,7 +674,118 @@ body.dark .home .text{
 
 
 
+.mycontain.center-text.homehero {
+  max-width: 1400px;
+}
 
+.mycontain.center-text {
+  text-align: center;
+}
+.mycontain {
+  position: relative;
+  z-index: 5;
+  display: block;
+  width: 100%;
+  max-width: 1150px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 25px;
+}
+.cta-button.light-button {
+  background-color: #ffd9d9;
+  color: #5928e5;
+}
+.cta-button {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  display: inline-block;
+  overflow: hidden;
+  padding: 14px 20px;
+  background-color: #5928e5;
+  -webkit-transition: 350ms;
+  transition: 350ms;
+  color: #ffd9d9;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+.cta-button:hover{
+background-color:#ffd9d9;
+color:#3317ba;
+letter-spacing:1px;}
+.cta-button.light-button:hover
+{background-color:#fff;
+  color:#5928e5}
+
+.w-button {
+  display: inline-block;
+  padding: 9px 15px;
+  background-color: #3898ec;
+  color: #fff;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+}
+.p-hero {
+  max-width: 650px;
+  margin: 2em auto;
+}
+
+  .bg{
+      background-color: #5e1efe;
+  }
+  .bgp{
+      background-color: #FE5F1E;
+  
+  }
+
+  .hero-h1{
+      margin: 20px 0px 0px 0px;
+      padding-top: 12vh;
+      margin: 20px 0 10px;
+      font-family: IntegralCF,sans-serif;
+      color: #5928e5;
+      font-size: 100px;
+      line-height: 83px;
+      font-weight: 900;
+      letter-spacing: 1px;
+  }
+   .white-heading {
+      color: #fff;
+      font-size: 90px;
+      align-items: flex-start;
+      text-align: center;
+      line-height: 75px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+  }
+  .desc{
+      font-family: 'Sofia Pro', sans-serif;
+      color: #fff ;
+      margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 300;
+  }
+
+  @font-face {
+font-family: 'IntegralCF';
+src: url('https://assets.website-files.com/5f3a64853eba5d020f364879/5f3a66cf88aaa03b3fa3b774_font.woff2') format('woff2'), url('https://assets.website-files.com/5f3a64853eba5d020f364879/5f3a66cf3ec5c1929fe756c0_font.woff') format('woff'), url('https://assets.website-files.com/5f3a64853eba5d020f364879/5f3a66eca57065b43ee5acce_Connary%20Fagen%20-%20Integral%20CF%20Heavy.otf') format('opentype');
+font-weight: 900;
+font-style: normal;
+font-display: auto;
+}
+@font-face {
+font-family: 'Sofia Pro';
+src: url('https://assets.website-files.com/5f3a64853eba5d020f364879/5f3a6776598ce695680be6f3_font.woff2') format('woff2'), url('https://assets.website-files.com/5f3a64853eba5d020f364879/5f3a67753eba5d5b5a364f9e_font.woff') format('woff'), url('https://assets.website-files.com/5f3a64853eba5d020f364879/5f3a67679a782368409ab431_Mostardesign%20-%20Sofia%20Pro%20Light.otf') format('opentype');
+font-weight: 300;
+font-style: normal;
+font-display: auto;}
 
 
 

@@ -24,10 +24,10 @@ function initRoutes(app) {
     
     if(auth){
         app.get('/', auth, homeController().grandIndex)
-    }
-    else{
-        app.get('/', homeController().index)
-    }
+    } 
+
+    app.get('/home', homeController().index)
+   
 
     app.post('/sub-categories', auth, homeController().grandIndex)
     app.get('/login', guest, authController().login)
