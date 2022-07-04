@@ -413,7 +413,6 @@ require('./routes/web')(app)
 app.use((req, res) => {
     res.status(404).render('errors/404')
 })
-
 const server = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 })

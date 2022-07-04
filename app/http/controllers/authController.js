@@ -114,7 +114,6 @@ function authController() {
 
                     };
                     console.log(link)
-
                     transporter.sendMail(mailOptions, function (err, info) {
                         if (err) {
 
