@@ -16,7 +16,7 @@ function productController() {
                 return res.redirect('/home')
             }
         
-        },
+        }, 
 
         async catProduct(req, res) {
             let product_Category = req.params.categoryName;
@@ -29,13 +29,14 @@ function productController() {
 
 
         async brandProduct(req, res) {
-            let subCategory = req.params.subCategory;
+            let subCategory = req.params.subCategory;    // subcategory == brandname
             // const chai = await Menu.find({ 'brand': `${subCategory}`, 'isverified': 'Yes' })
             const chai = await Menu.find({ 'brand': `${subCategory}`})
-            const pani = await Brand.find({ 'subCategory': `${subCategory}` })
+            // const pani = await Brand.find({ 'subCategory': `${subCategory}` })
+            const pani = await Brand.find()
             return res.render('menus/product', { chai: chai, pani: pani })
         },
-
+ 
 
         async productfetchBysubCN(req, res) {
             let subCN = req.params.subCategory

@@ -241,7 +241,7 @@ app.post('/paynow', [parseUrl, parseJson], async (req, res) => {
 })
 
 
-// Upload image from vendor or admin add product 
+// Upload image from vendor or admin #Addproduct 
 const admin = require('./app/http/middlewares/admin')
 const Product = require('./app/models/product')
 const User = require('./app/models/user')

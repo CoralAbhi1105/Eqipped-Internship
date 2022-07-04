@@ -18,14 +18,15 @@ body{
 // }
 
 
-.lastli a {
-    background: $primary;
-    &:hover {
-        background: $primary-hover;
-        }
-}
+// .lastli a {
+//     background: $primary;
+//     &:hover {
+//         background: $primary-hover;
+//         }
+// }
 
 
+// Sidebar targeted 
 nav li a {
     transition: $smooth;
 
@@ -33,6 +34,20 @@ nav li a {
     color: $primary;
     }
 }
+
+// navbar targeted 
+.cherry li a {
+    transition: $smooth;
+
+    &:hover {
+    color: $darkside;
+    }
+}
+
+
+
+
+
 
 section.hero{
     background: $secondary;
